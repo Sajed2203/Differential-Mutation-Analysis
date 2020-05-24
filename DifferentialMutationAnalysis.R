@@ -107,11 +107,9 @@ DifferentialMutationAnalysis = function(mafFile, geneType="all", p=5,
   #determine if we want to find all cancer genes or just oncogenes or TSGs
   if(geneType=="onco"){
     tCount = parseMaf(protNames, mafFile, usePackages, "Missense_Mutation")
-  }
-  if(geneType=="TSG"){
+  } else if(geneType=="TSG"){
     tCount = parseMaf(protNames, mafFile, usePackages, "Nonsense_Mutation")
-  }
-  else{
+  } else{
     tCount = parseMaf(protNames, mafFile, usePackages)
   }
   
